@@ -42,14 +42,13 @@ def get_valid_score():
 def evaluate_result(score):
     """Evaluate the result from a given score."""
     if score < 0 or score > 100:
-        result = "Invalid score"
+        return "Invalid score"
     elif score >= 90:
-        result = "Excellent"
+        return "Excellent"
     elif score >= 50:
-        result = "Passable"
+        return "Passable"
     else:
-        result = "Bad"
-    return result
+        return "Bad"
 
 
 def print_asterisks(number):
