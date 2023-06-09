@@ -5,11 +5,18 @@ Fix broken program to determine score status
 """
 
 
+from random import randint
+
+
 def main():
-    """Program to ask a user for their score and print the evaluated result."""
-    score = float(input("Enter score: "))
-    result = evaluate_result(score)
-    print(result)
+    """Program to ask a user for their score, generate a random score, and
+    print the evaluated results."""
+    users_score = float(input("Enter score: "))
+    result = evaluate_result(users_score)
+    print(f"Your score of {users_score} is {result}")
+    random_score = float(randint(0, 100))
+    result = evaluate_result(random_score)
+    print(f"A random score of {random_score} is {result}")
 
 
 def evaluate_result(score):
