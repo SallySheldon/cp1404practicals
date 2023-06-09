@@ -1,6 +1,6 @@
 """
 CP1404 - Prac 02 - Extension - More temperatures
-Program to generate temps for .txt file
+Program to generate temperatures for .txt file
 """
 
 import random
