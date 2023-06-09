@@ -4,7 +4,7 @@ Program to convert temperatures from input file
 """
 
 MENU = """
-Choose conversion required:
+Choose temperature conversion required:
 (C)elsius to Fahrenheit
 (F)ahrenheit to Celsius
 """
@@ -18,12 +18,11 @@ def main():
     print(MENU)
     choice = input(">>> ").upper()
     for line in in_file:
-        temperature_in = float(line)
         if choice == "C":
-            temperature_out = convert_celsius_to_fahrenheit(temperature_in)
+            converted_temperature = convert_celsius_to_fahrenheit(float(line))
         else:
-            temperature_out = convert_fahrenheit_to_celsius(temperature_in)
-        print(temperature_out, file=out_file)
+            converted_temperature = convert_fahrenheit_to_celsius(float(line))
+        print(converted_temperature, file=out_file)
     out_file.close()
 
 
@@ -34,7 +33,7 @@ def convert_celsius_to_fahrenheit(celsius):
 
 
 def convert_fahrenheit_to_celsius(fahrenheit):
-    """Convert degrees fahrenheit  to degrees celsius."""
+    """Convert degrees fahrenheit to degrees celsius."""
     celsius = (fahrenheit - 32) * 5 / 9
     return celsius
 
