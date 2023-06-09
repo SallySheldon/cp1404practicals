@@ -9,6 +9,6 @@ NUMBER_OF_TEMPERATURES = 20
 
 out_file = open("temps_input.txt", "w")
 for i in range(NUMBER_OF_TEMPERATURES):
-    temperature = float(random.uniform(-200, 200))
+    temperature = random.uniform(-200, 200)
     print(temperature, file=out_file)
 out_file.close()
