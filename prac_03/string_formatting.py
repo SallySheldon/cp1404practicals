@@ -47,3 +47,8 @@ print(f"{year} {name} for about ${cost:,.2f}!")
 for i in range(4):
     value = i * 50
     print(f"{value:3}")
+# Alternative version of for loop after reviewing solutions:
+# I prefer this version as it's more transparent / readable and saves the
+#   additional step of calculating another variable
+for number in range(0, 151, 50):
+    print(f"{number:3}")
