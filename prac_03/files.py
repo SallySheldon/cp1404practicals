@@ -29,10 +29,14 @@ in_file.close()
 # 17
 # 42
 # 400
-
 # Write code that opens "numbers.txt", reads only the first two numbers and
 # adds them together then prints the result, which should be... 59.
-
+in_file = open("numbers.txt")
+total = 0
+for i in range(2):
+    total += int(in_file.readline())
+print(total)
+in_file.close()
 
 # 4. Now write a fourth block of code that prints the total for all lines in
 # numbers.txt or a file with any number of numbers.
