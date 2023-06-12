@@ -3,16 +3,16 @@ CP1404 - Practical 03
 """
 
 # # Version 1: supplied code
-# try:
-#     numerator = int(input("Enter the numerator: "))
-#     denominator = int(input("Enter the denominator: "))
-#     fraction = numerator / denominator
-#     print(fraction)
-# except ValueError:
-#     print("Numerator and denominator must be valid numbers!")
-# except ZeroDivisionError:
-#     print("Cannot divide by zero!")
-# print("Finished.")
+try:
+    numerator = int(input("Enter the numerator: "))
+    denominator = int(input("Enter the denominator: "))
+    fraction = numerator / denominator
+    print(fraction)
+except ValueError:
+    print("Numerator and denominator must be valid numbers!")
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+print("Finished.")
 
 # Answer the following questions:
 # 1. When will a ValueError occur?
