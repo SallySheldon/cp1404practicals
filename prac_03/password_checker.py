@@ -40,9 +40,11 @@ def is_valid_password(password):
             count_lower += 1
         if character.isupper():
             count_upper += 1
+        if character.isdigit():
+            count_digit += 1
 
     # TODO: if any of the 'normal' counts are zero, return False
-    if count_lower == 0 or count_upper == 0:
+    if count_lower == 0 or count_upper == 0 or count_digit == 0:
         return False
 
     # TODO: if special characters are required, then check the count of those
