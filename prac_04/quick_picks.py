@@ -27,9 +27,7 @@ def generate_quick_picks(number_of_quick_picks):
                 number = random.randint(MINIMUM, MAXIMUM)
             quick_pick.append(number)
         quick_pick.sort()
-        for number in quick_pick:
-            print(f"{number:2} ", end="")
-        print()
+        print(" ".join(f"{number:2}" for number in quick_pick))
 
 
 main()
