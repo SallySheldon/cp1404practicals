@@ -11,8 +11,14 @@ NUMBERS_PER_QUICK_PICK = 6
 
 
 def main():
-    """Program to generate and display a user-inputted number of 6-number quick pick draws."""
+    """Program to generate and display a user-inputted number of quick pick draws."""
     number_of_quick_picks = int(input("How many quick picks? "))
+    generate_quick_picks(number_of_quick_picks)
+
+
+def generate_quick_picks(number_of_quick_picks):
+    """Generate a supplied number of quick picks using constant values for the number, minimum and maximum of random
+    numbers drawn."""
     for i in range(number_of_quick_picks):
         quick_pick = []
         for j in range(NUMBERS_PER_QUICK_PICK):
