@@ -33,8 +33,8 @@ def get_data():
 
 def display_subject_details(data):
     """Display subject details from a nested list in sentence form."""
-    for i in range(len(data)):
-        print(f"{data[i][0]} is taught by {data[i][1]} and has {data[i][2]} students")
+    for record in data:
+        print(f"{record[0]} is taught by {record[1]} and has {record[2]} students")
 
 
 main()
