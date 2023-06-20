@@ -7,10 +7,10 @@ FILENAME = "subject_data.txt"
 
 
 def main():
-    """Read subject_data file and print details of subject, lecturer and student numbers."""
-    data = get_data()
-    print(data)
-    display_subject_details(data)
+    """Read subject data file and display details of subject, lecturer and student numbers."""
+    subjects_data = get_data()
+    print(subjects_data)
+    display_subject_details(subjects_data)
 
 
 def get_data():
