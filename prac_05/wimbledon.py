@@ -10,20 +10,31 @@ FILENAME = "wimbledon.csv"
 
 
 def main():
-    """Program to read file of Wimbledon men's final results and display champions' nationalities and number of wins."""
+    """Program to get and display the names of the men's Wimbledon singles champions, how many times they have
+    won, and their countries."""
     filename = FILENAME
     results = process_file(filename)
-    champion_to_number = {}
-    # Store champion's name (key) and number of times won (value) in dictionary
+    champion_to_wins = store_champion_wins(results)
+    countries = store_countries(results)
+    print(champion_to_wins)
+    print(countries)
+
+
+def store_countries(results):
+    """Store the countries of the champions in a set."""
+    countries = {result[1] for result in results}
+    return countries
+
+
+def store_champion_wins(results):
+    """Store the number of wins per champion in a dictionary."""
+    champion_to_wins = {}
     for result in results:
         try:
-            champion_to_number[result.split(',')[2]] += 1
+            champion_to_wins[result[2]] += 1
         except KeyError:
-            champion_to_number[result.split(',')[2]] = 1
-    print(champion_to_number)
-    # Store champions' nationalities in set
-    nationalities = {result.split(',')[1] for result in results}
-    print(nationalities)
+            champion_to_wins[result[2]] = 1
+    return champion_to_wins
 
 
 def process_file(filename):
@@ -33,8 +44,8 @@ def process_file(filename):
         in_file.readline()  # Ignore header row
         results = []
         for line in in_file:
-            result = line.strip().split(',')[:3]  # Extract year, country, champion for each annual result
-            results.append(result)  # Store annual results in nested list
+            result = line.strip().split(',')[:3]  # Extract year, nationality, champion for each annual result
+            results.append(result)
     return results
 
 
