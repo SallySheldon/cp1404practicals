@@ -3,7 +3,7 @@ CP1404 Practical 05
 Do-from-scratch Exercises
 Word Occurrences
 Estimate:   10 minutes
-Actual:
+Actual:     20 minutes
 """
 
 text = input("Text: ").lower()
@@ -14,5 +14,5 @@ for word in words:
         words_to_occurrences[word] += 1
     except KeyError:
         words_to_occurrences[word] = 1
-for word, occurrences in words_to_occurrences.items():
+for word, occurrences in sorted(words_to_occurrences.items()):
     print(f"{word} : {occurrences}")
