@@ -52,8 +52,8 @@ def is_valid_password(password):
             # I chose only to count special characters if they are required
             if character in SPECIAL_CHARACTERS:
                 count_special += 1
-    if count_special == 0:
-        return False
+        if count_special == 0:
+            return False
 
     # if we get here (without returning False), then the password must be valid
     return True
