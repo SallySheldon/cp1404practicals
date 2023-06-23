@@ -3,7 +3,7 @@ CP1404 Practical 05
 Do-from-scratch Exercises
 Game, Set, Match
 Estimate:   30 minutes
-Actual:     45 minutes
+Actual:     65 minutes
 """
 
 FILENAME = "wimbledon.csv"
