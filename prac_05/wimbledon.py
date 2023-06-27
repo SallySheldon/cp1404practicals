@@ -17,11 +17,7 @@ def main():
     results = process_file(FILENAME)
     champion_to_wins = store_champion_wins(results)
     countries = store_countries(results)
-    print("Wimbledon Champions:")
-    for champion, wins in champion_to_wins.items():
-        print(champion, wins)
-    print(f"\nThese {len(countries)} countries have won Wimbledon:")
-    print(', '.join(sorted(countries)))
+    display_results(champion_to_wins, countries)
 
 
 def process_file(filename):
@@ -52,6 +48,15 @@ def store_countries(results):
     """Store the countries of the champions in a set."""
     countries = {result[INDEX_COUNTRY] for result in results}
     return countries
+
+
+def display_results(champion_to_wins, countries):
+    """Display champions, number of wins, and winning countries."""
+    print("Wimbledon Champions:")
+    for champion, wins in champion_to_wins.items():
+        print(champion, wins)
+    print(f"\nThese {len(countries)} countries have won Wimbledon:")
+    print(', '.join(sorted(countries)))
 
 
 main()
