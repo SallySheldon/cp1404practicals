@@ -6,14 +6,14 @@ Estimate:   10 minutes
 Actual:     18 minutes
 """
 
+word_to_occurrences = {}
 text = input("Text: ").lower()
 words = text.split()
-words_to_occurrences = {}
 for word in words:
     try:
-        words_to_occurrences[word] += 1
+        word_to_occurrences[word] += 1
     except KeyError:
-        words_to_occurrences[word] = 1
-maximum_width = max((len(word) for word in words_to_occurrences))
-for word, occurrences in sorted(words_to_occurrences.items()):
+        word_to_occurrences[word] = 1
+maximum_width = max((len(word) for word in word_to_occurrences))
+for word, occurrences in sorted(word_to_occurrences.items()):
     print(f"{word:{maximum_width}} : {occurrences}")
