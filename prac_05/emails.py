@@ -13,10 +13,8 @@ def main():
     email = input("Email: ")
     while email != "":
         name = extract_name(email)
-        yes_no = input(f"Is your name {name}? (Y/n) ")
-        if yes_no == ("Y" or ""):
-            pass
-        else:
+        confirmation = input(f"Is your name {name}? (Y/n) ")
+        if confirmation.upper() != "Y" and confirmation != "":
             name = input("Name: ")
         email_to_name[email] = name
         email = input("Email: ")
