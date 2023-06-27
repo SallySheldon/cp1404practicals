@@ -14,10 +14,10 @@ COLOUR_TO_CODE = {'aliceblue': '#f0f8ff', 'amaranth': '#e52b50', 'aquamarine1': 
 
 print(COLOUR_TO_CODE)
 
-colour_name = input("Enter colour name: ").lower()
+colour_name = input("\nEnter colour name: ").lower()
 while colour_name != "":
     try:
         print(f"{colour_name.title()} is colour code {COLOUR_TO_CODE[colour_name]}")
     except KeyError:
         print("Sorry, that colour name isn't in our list.")
-    colour_name = input("Enter colour name: ").lower()
+    colour_name = input("\nEnter colour name: ").lower()
