@@ -5,6 +5,9 @@ Estimated time to complete: 10 mins
 Actual time to complete: 10 mins
 """
 
+CURRENT_YEAR = 2023
+VINTAGE_AGE = 50
+
 
 class Guitar:
     """Represent details about a guitar in a Guitar object.
@@ -24,12 +27,12 @@ class Guitar:
         """Return a string representation of a Guitar object."""
         return f"{self.name} ({self.year}) : ${self.cost:,.2f}"
 
-    def get_age(self, year):
-        """Return the age in years of a Guitar object using current year."""
-        age = year - self.year
+    def get_age(self):
+        """Return the age in years of a Guitar object using CURRENT_YEAR."""
+        age = CURRENT_YEAR - self.year
         return age
 
-    def is_vintage(self, year):
-        """Determine whether a Guitar object is 50 or more years old (vintage)."""
-        age = self.get_age(year)
-        return age >= 50
+    def is_vintage(self):
+        """Determine whether a Guitar object is vintage (at least VINTAGE_AGE)."""
+        age = self.get_age()
+        return age >= VINTAGE_AGE

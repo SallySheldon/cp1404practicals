@@ -7,8 +7,6 @@ Actual time to complete: 40 mins
 
 from prac_06.guitar import Guitar
 
-YEAR = 2023
-
 
 def main():
     """Program to store and display details of a user's guitars."""
@@ -31,7 +29,7 @@ def main():
 
     print("These are my guitars:")
     for i, guitar in enumerate(guitars, 1):
-        vintage_string = "(vintage)" if guitar.is_vintage(YEAR) else ""
+        vintage_string = "(vintage)" if guitar.is_vintage() else ""
         print(f"Guitar {i:>{max_number}}: {guitar.name:>{max_name}} ({guitar.year}), worth $"
               f"{guitar.cost:>{max_cost},.2f} {vintage_string}")
 
