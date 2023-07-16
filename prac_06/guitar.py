@@ -2,7 +2,7 @@
 CP1404 Practical 06 - Do-from-scratch Exercises - Guitars!
 Define a Guitar class
 Estimated time to complete: 10 mins
-Actual time to complete: 10 mins
+Actual time to complete: 20 mins
 """
 
 import datetime  # Use datetime module to obtain the current year
@@ -12,15 +12,15 @@ VINTAGE_AGE = 50
 
 
 class Guitar:
-    """Represent details about a guitar in a Guitar object.
-
-    name: string, name of guitar object
-    year: integer, year of manufacture
-    cost: float, cost in dollars and cents
-    """
+    """Represent details about a guitar in a Guitar object."""
 
     def __init__(self, name="", year=0, cost=0.0):
-        """Initialise a Guitar object."""
+        """Initialise a Guitar object.
+
+        name: string, name of guitar object
+        year: integer, year of manufacture
+        cost: float, cost in dollars and cents
+        """
         self.name = name
         self.year = year
         self.cost = cost
