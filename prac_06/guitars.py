@@ -2,7 +2,7 @@
 CP1404 Practical 06 - Do-from-scratch Exercises - Guitars!
 Program to use Guitar class and methods.
 Estimated time to complete: 30 mins
-Actual time to complete: 40 mins
+Actual time to complete: 50 mins
 """
 
 from prac_06.guitar import Guitar
