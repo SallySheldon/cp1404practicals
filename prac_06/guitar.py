@@ -5,7 +5,9 @@ Estimated time to complete: 10 mins
 Actual time to complete: 10 mins
 """
 
-CURRENT_YEAR = 2023
+import datetime  # Use datetime module to obtain the current year
+
+CURRENT_YEAR = datetime.date.today().year
 VINTAGE_AGE = 50
 
 
