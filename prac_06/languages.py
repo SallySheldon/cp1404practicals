@@ -1,6 +1,6 @@
 """
 CP1404 Practical 06 - Intermediate exercises
-Construct program to use ProgrammingLanguage class
+Client code for program to use ProgrammingLanguage class
 """
 
 from prac_06.programming_language import ProgrammingLanguage
