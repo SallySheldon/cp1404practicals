@@ -1,5 +1,8 @@
 """
 CP1404 Practical 06 - Intermediate exercises
+Estimated time to complete Exercise: 30 mins
+Actual time to complete: 40 mins (including thinking, etc)
+
 Client code for program to use ProgrammingLanguage class
 """
 
