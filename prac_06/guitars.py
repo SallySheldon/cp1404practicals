@@ -22,6 +22,8 @@ def main():
         guitars.append(guitar)
         print(f"{guitar} added.")
         name = input("Name: ")
+    guitars.sort()
+
     # Calculate alignments for display formatting
     max_number = len(str(len(guitars)))
     max_name = max((len(guitar.name) for guitar in guitars))
