@@ -18,9 +18,9 @@ def main():
     while name != "":
         year = int(input("Year: "))
         cost = float(input("Cost: $"))
-        guitar = Guitar(name, year, cost)
-        guitars.append(guitar)
-        print(f"{guitar} added.")
+        guitar_to_add = Guitar(name, year, cost)
+        guitars.append(guitar_to_add)
+        print(f"{guitar_to_add} added.")
         name = input("Name: ")
 
     if guitars:  # First check whether the list has contents
