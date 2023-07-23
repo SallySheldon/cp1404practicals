@@ -118,11 +118,11 @@ def filter_projects(projects):
 
 def add_project(projects):
     """Add a new Project object to a list of stored Projects."""
-    name = input("Name: ")
-    start_date = input("Start date (dd/mm/yyyy): ")
-    priority = int(input("Priority: "))  # TODO: Error check for valid integer
-    cost_estimate = float(input("Cost estimate: $"))  # TODO: Error check for valid float
-    percent_complete = int(input("Percent complete: "))  # TODO: Error check for valid integer
+    name = get_valid_string("Name: ")
+    start_date = get_valid_string("Start date (dd/mm/yyyy): ")
+    priority = get_valid_integer("Priority: ")
+    cost_estimate = get_valid_float("Cost estimate: $")
+    percent_complete = get_valid_integer("Percent complete: ")
     projects.append(Project(name, start_date, priority, cost_estimate, percent_complete))
 
 
@@ -133,17 +133,60 @@ def update_project(projects):
     for i, project in enumerate(projects):
         print(f"{i:{max_width_index}} {project}")
     # Get user choice of project to update
-    project_choice = int(input("Project choice: "))  # TODO Error check for valid integer within range
+    project_choice = get_valid_integer("Project choice: ")
+    # Ensure user choice is not greater than the available project numbers
+    while project_choice > len(projects) - 1:
+        print("Invalid project choice")
+        project_choice = get_valid_integer("Project choice: ")
     print(projects[project_choice])
     # Prompt user to update details; blank inputs retain existing values
-    new_percentage = input("New Percentage: ")
+    new_percentage = get_valid_integer("New Percentage: ")
     if new_percentage != "":
-        new_percentage = int(new_percentage)  # TODO: Error check for valid integer
+        new_percentage = int(new_percentage)
         projects[project_choice].percent_complete = new_percentage
-    new_priority = input("New Priority: ")
+    new_priority = get_valid_integer("New Priority: ")
     if new_priority != "":
-        new_priority = int(new_priority)  # TODO: Error check for valid integer
+        new_priority = int(new_priority)
         projects[project_choice].priority = new_priority
+
+
+def get_valid_string(prompt):
+    """Prompt the user for a non-empty string."""
+    string = input(prompt)
+    while string == "":
+        print("Input cannot be blank")
+        string = input(prompt)
+    return string
+
+
+def get_valid_integer(prompt):
+    """Prompt the user for an integer >= 0."""
+    is_valid_input = False
+    while not is_valid_input:
+        try:
+            integer = int(input(prompt))
+            if integer < 0:
+                print("Number must be >= 0")
+            else:
+                is_valid_input = True
+        except ValueError:
+            print("Invalid input; enter a valid integer")
+    return integer
+
+
+def get_valid_float(prompt):
+    """Prompt the user for a float value >= 0."""
+    is_valid_input = False
+    while not is_valid_input:
+        try:
+            float_value = float(input(prompt))
+            if float_value < 0:
+                print("Number must be >= 0")
+            else:
+                is_valid_input = True
+        except ValueError:
+            print("Invalid input; enter a valid number")
+    return float_value
 
 
 main()
