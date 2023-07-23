@@ -2,7 +2,7 @@
 CP1404 Practical 07 - Do-from-scratch Exercise
 Project Management Program
 Estimated time to complete: 45 mins
-Actual time to complete:
+Actual time to complete: 110 mins (way too long!!)
 
 Project class module.
 """
