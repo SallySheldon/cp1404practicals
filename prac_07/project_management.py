@@ -3,6 +3,8 @@ CP1404 Practical 07 - Do-from-scratch Exercise.
 Project Management Program client code.
 """
 
+from datetime import datetime
+
 from project import Project
 
 DEFAULT_FILENAME = "projects.txt"
@@ -32,8 +34,7 @@ def main():
         elif choice == "D":
             display_projects(projects)
         elif choice == "F":
-            # filter_projects(projects)
-            pass
+            filter_projects(projects)
         elif choice == "A":
             print("Let's add a new project.")
             add_project(projects)
@@ -62,9 +63,8 @@ def load_projects(filename):
         for line in in_file:
             # File format is: Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage
             parts = line.strip().split('\t')
-            # Construct a Project object using the elements
+            # Construct a Project object using the elements:
             # Start Date = date, Priority = int, Cost Estimate = float, Completion Percentage = int
-            # TODO: reformat date from string using datetime
             project = Project(parts[0], parts[1], int(parts[2]), float(parts[3]), int(parts[4]))
             projects.append(project)
     return projects
@@ -93,12 +93,33 @@ def display_projects(projects):
 
 def filter_projects(projects):
     """Filter list of Project objects by date."""
+    date_string = input("Show projects that start after date (dd/mm/yyyy): ")
+    filter_date = datetime.strptime(date_string, "%d/%m/%Y").date()
+    # Create a list of the start dates of projects that are after the filter date
+    filtered_project_start_dates = []
+    for project in projects:
+        if project.start_date > filter_date:
+            filtered_project_start_dates.append(project.start_date)
+    filtered_project_start_dates.sort()  # Sort the filtered project start_dates in ascending order
+    for filtered_project_start_date in filtered_project_start_dates:
+        for project in projects:
+            if project.start_date == filtered_project_start_date:
+                print(project)
+    # NOTE: Because the __lt__() method in the Project class definition is already defining the < comparison by
+    # reference to the project.priority attribute, I can't redefine that method to sort by the
+    # project.start_date attribute.
+    # Another option might have been to sort the projects list by start_date using a lambda function (but we haven't
+    # learned these so far):
+    # projects = sorted(projects, key=lambda x: x.start_date)
+    # for project in projects:
+    #     if project.start_date > filter_date:
+    #         print(project)
 
 
 def add_project(projects):
     """Add a new Project object to a list of stored Projects."""
     name = input("Name: ")
-    start_date = input("Start date (dd/mm/yyyy): ")  # TODO: Convert string to datetime
+    start_date = input("Start date (dd/mm/yyyy): ")
     priority = int(input("Priority: "))  # TODO: Error check for valid integer
     cost_estimate = float(input("Cost estimate: $"))  # TODO: Error check for valid float
     percent_complete = int(input("Percent complete: "))  # TODO: Error check for valid integer
@@ -121,7 +142,7 @@ def update_project(projects):
         projects[project_choice].percent_complete = new_percentage
     new_priority = input("New Priority: ")
     if new_priority != "":
-        new_priority = int(new_priority) # TODO: Error check for valid integer
+        new_priority = int(new_priority)  # TODO: Error check for valid integer
         projects[project_choice].priority = new_priority
 
 

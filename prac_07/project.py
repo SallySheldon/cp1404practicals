@@ -7,6 +7,8 @@ Actual time to complete:
 Project class module.
 """
 
+from datetime import datetime
+
 
 class Project:
     """Define a Project class."""
@@ -14,20 +16,20 @@ class Project:
     def __init__(self, name, start_date, priority, cost_estimate, percent_complete):
         """Initialise a Project object with attributes:
         name: string
-        start_date: date
+        start_date: date string, stored as datetime date object
         priority: integer
         cost_estimate: float
         percent_complete: integer
         """
         self.name = name
-        self.start_date = start_date
+        self.start_date = datetime.strptime(start_date, "%d/%m/%Y").date()  # Store date string as datetime date
         self.priority = priority
         self.cost_estimate = cost_estimate
         self.percent_complete = percent_complete
 
     def __str__(self):
         """Return a string representation of a Project object."""
-        return f"{self.name}, start: {self.start_date}, priority {self.priority}, estimate: $" \
+        return f"{self.name}, start: {self.start_date.strftime('%d/%m/%Y')}, priority {self.priority}, estimate: $" \
                f"{self.cost_estimate:.2f}, completion: {self.percent_complete}%"
 
     def __repr__(self):
@@ -46,13 +48,13 @@ class Project:
         """Determine whether a Project object is complete."""
         return self.percent_complete == 100
 
-    # TODO: Is a method required to sort Projects by date?
-
 
 def run_tests():
     """Test methods in Project class using dummy data."""
-    read_7_habits_book = Project("Read 7 Habits Book", "13/12/2021", 6, 99.0, 100)
-    build_car_park = Project("Build Car Park", "12/09/2021", 2, 600000.0, 95)
+    read_7_habits_book = Project("Read 7 Habits Book", "13/12/2021", 6,
+                                 99.0, 100)
+    build_car_park = Project("Build Car Park", "12/09/2021", 2, 600000.0,
+                             95)
     mow_lawn = Project("Mow Lawn", "31/10/2022", 3, 3.0, 0)
     projects = [read_7_habits_book, build_car_park, mow_lawn]
 
