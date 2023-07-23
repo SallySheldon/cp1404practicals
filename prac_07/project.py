@@ -11,24 +11,24 @@ Project class module.
 class Project:
     """Define a Project class."""
 
-    def __init__(self, name, start_date, priority, cost_estimate, completion_percentage):
+    def __init__(self, name, start_date, priority, cost_estimate, percent_complete):
         """Initialise a Project object with attributes:
         name: string
         start_date: date
         priority: integer
         cost_estimate: float
-        completion_percentage: integer
+        percent_complete: integer
         """
         self.name = name
         self.start_date = start_date
         self.priority = priority
         self.cost_estimate = cost_estimate
-        self.completion_percentage = completion_percentage
+        self.percent_complete = percent_complete
 
     def __str__(self):
         """Return a string representation of a Project object."""
         return f"{self.name}, start: {self.start_date}, priority {self.priority}, estimate: $" \
-               f"{self.cost_estimate:.2f}, completion: {self.completion_percentage}%"
+               f"{self.cost_estimate:.2f}, completion: {self.percent_complete}%"
 
     def __repr__(self):
         """Return official representation of a Project object as string representation."""
@@ -44,7 +44,7 @@ class Project:
 
     def is_complete(self):
         """Determine whether a Project object is complete."""
-        return self.completion_percentage == 100
+        return self.percent_complete == 100
 
     # TODO: Is a method required to sort Projects by date?
 

@@ -27,16 +27,16 @@ def main():
             projects = load_projects(filename)
         elif choice == "S":
             filename = get_filename("Enter the name of a file to save projects to: ")
-            # save_projects(filename)
-            pass
+            save_projects(filename, projects)
+            print(f"{len(projects)} projects saved to {filename}.")
         elif choice == "D":
             display_projects(projects)
         elif choice == "F":
             # filter_projects(projects)
             pass
         elif choice == "A":
-            # add_project(projects):
-            pass
+            print("Let's add a new project.")
+            add_project(projects)
         elif choice == "U":
             # update_project(projects)
             pass
@@ -71,8 +71,12 @@ def load_projects(filename):
     return projects
 
 
-def save_projects(filename):
+def save_projects(filename, projects):
     """Save Project details to file."""
+    with open(filename, 'w') as out_file:
+        for project in projects:
+            print(project.name, project.start_date, project.priority, project.cost_estimate,
+                  project.percent_complete, sep="\t", file=out_file)
 
 
 def display_projects(projects):
@@ -94,6 +98,12 @@ def filter_projects(projects):
 
 def add_project(projects):
     """Add a new Project object to a list of stored Projects."""
+    name = input("Name: ")  # TODO: Error check for blank string
+    start_date = input("Start date (dd/mm/yyyy): ")  # TODO: Convert string to datetime
+    priority = int(input("Priority: "))  # TODO: Error check for valid integer
+    cost_estimate = float(input("Cost estimate: $"))
+    percent_complete = int(input("Percent complete: "))  # TODO: Error check for valid integer
+    projects.append(Project(name, start_date, priority, cost_estimate, percent_complete))
 
 
 def update_project(projects):
