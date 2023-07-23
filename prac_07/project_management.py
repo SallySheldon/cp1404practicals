@@ -93,7 +93,7 @@ def display_projects(projects):
 
 def filter_projects(projects):
     """Filter list of Project objects by date."""
-    date_string = input("Show projects that start after date (dd/mm/yyyy): ")
+    date_string = get_valid_string("Show projects that start after date (dd/mm/yyyy): ")
     filter_date = datetime.strptime(date_string, "%d/%m/%Y").date()
     # Create a list of the start dates of projects that are after the filter date
     filtered_project_start_dates = []
