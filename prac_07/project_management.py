@@ -45,6 +45,7 @@ def main():
         print(MENU)
         choice = input(">>> ").upper()
     print("Thank you for using custom-built project management software.")
+    save_projects(DEFAULT_FILENAME, projects)
 
 
 def get_filename(prompt):
