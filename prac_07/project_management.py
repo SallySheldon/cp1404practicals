@@ -38,8 +38,7 @@ def main():
             print("Let's add a new project.")
             add_project(projects)
         elif choice == "U":
-            # update_project(projects)
-            pass
+            update_project(projects)
         else:
             print("Invalid choice.")
         print(MENU)
@@ -98,16 +97,32 @@ def filter_projects(projects):
 
 def add_project(projects):
     """Add a new Project object to a list of stored Projects."""
-    name = input("Name: ")  # TODO: Error check for blank string
+    name = input("Name: ")
     start_date = input("Start date (dd/mm/yyyy): ")  # TODO: Convert string to datetime
     priority = int(input("Priority: "))  # TODO: Error check for valid integer
-    cost_estimate = float(input("Cost estimate: $"))
+    cost_estimate = float(input("Cost estimate: $"))  # TODO: Error check for valid float
     percent_complete = int(input("Percent complete: "))  # TODO: Error check for valid integer
     projects.append(Project(name, start_date, priority, cost_estimate, percent_complete))
 
 
 def update_project(projects):
-    """Update Priority and/or Completion Percentage details for a stored Project object. """
+    """Update Priority and/or Completion Percentage details for a chosen Project object."""
+    # Display numbered list of existing projects
+    max_width_index = len(str(len(projects)))  # Calculate alignment value for project numbers
+    for i, project in enumerate(projects):
+        print(f"{i:{max_width_index}} {project}")
+    # Get user choice of project to update
+    project_choice = int(input("Project choice: "))  # TODO Error check for valid integer within range
+    print(projects[project_choice])
+    # Prompt user to update details; blank inputs retain existing values
+    new_percentage = input("New Percentage: ")
+    if new_percentage != "":
+        new_percentage = int(new_percentage)  # TODO: Error check for valid integer
+        projects[project_choice].percent_complete = new_percentage
+    new_priority = input("New Priority: ")
+    if new_priority != "":
+        new_priority = int(new_priority) # TODO: Error check for valid integer
+        projects[project_choice].priority = new_priority
 
 
 main()
