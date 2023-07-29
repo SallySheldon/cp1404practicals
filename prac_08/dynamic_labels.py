@@ -4,7 +4,7 @@ Dynamic Labels exercise
 Author: Sally Sheldon
 
 Estimated time to complete: 45 mins
-Actual time to complete:  mins
+Actual time to complete: 35 mins
 """
 
 from kivy.app import App
