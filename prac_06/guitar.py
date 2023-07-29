@@ -5,9 +5,8 @@ Estimated time to complete: 10 mins
 Actual time to complete: 20 mins
 """
 
-import datetime  # Use datetime module to obtain the current year
+from datetime import datetime  # Use datetime module to obtain the current year
 
-CURRENT_YEAR = datetime.date.today().year
 VINTAGE_AGE = 50
 
 
@@ -22,8 +21,8 @@ class Guitar:
         cost: float, cost in dollars and cents
         """
         self.name = name
-        self.year = year
-        self.cost = cost
+        self.year = int(year)
+        self.cost = float(cost)
 
     def __str__(self):
         """Return a string representation of a Guitar object."""
@@ -35,7 +34,7 @@ class Guitar:
 
     def get_age(self):
         """Return the age in years of a Guitar object using CURRENT_YEAR."""
-        return CURRENT_YEAR - self.year
+        return datetime.date.today().year - self.year
 
     def is_vintage(self):
         """Determine whether a Guitar object is vintage (at least VINTAGE_AGE)."""

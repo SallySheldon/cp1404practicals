@@ -38,9 +38,12 @@ def main():
     # Close the file as soon as we've finished reading it
     in_file.close()
 
-    # Loop through and display all languages (using their str method)
+    # Loop through and display all languages (using their __str__ method)
     for language in languages:
         print(language)
+
+    # Print all the languages as a single list
+    print(languages)  # this requires the __repr__ method in the class definition
 
 
 main()

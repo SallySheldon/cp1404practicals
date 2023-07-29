@@ -20,7 +20,7 @@ def main():
         parts = line.strip().split(',')
         # Construct a Guitar object using the elements
         # year should be an int, price should be a float
-        guitar = Guitar(parts[0], int(parts[1]), float(parts[2]))
+        guitar = Guitar(*parts)
         # Add the Guitar object to the list
         guitars.append(guitar)
     in_file.close()

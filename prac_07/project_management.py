@@ -74,9 +74,10 @@ def load_projects(filename):
 def save_projects(filename, projects):
     """Save Project details to file."""
     with open(filename, 'w') as out_file:
+        print("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage", file=out_file)  # Insert header line
         for project in projects:
-            print(project.name, project.start_date, project.priority, project.cost_estimate,
-                  project.percent_complete, sep="\t", file=out_file)
+            print(project.name, project.start_date.strftime('%d/%m/%Y'), project.priority, project.cost_estimate,
+                  project.percent_complete, sep="\t", file=out_file)  # Save start_date as string
 
 
 def display_projects(projects):
