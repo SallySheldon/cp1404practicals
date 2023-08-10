@@ -39,14 +39,14 @@ work as something that we're going to be handing to another person, to pick and 
 course, how the 'real world' works!) 
 
 ## Practical tasks overall?
-I think the Practical tasks are very well structured, to complement the subject content and consolidate learning. 
+I think the Practical tasks are well-structured, to complement the subject content and consolidate learning. 
 The use of GitHub is invaluable on many levels: teaching good practice for quality control, teaching an important 
 skill, supporting the PR and code reviews, etc. I can only imagine how long it has taken, to build, and 
 incrementally improve, the Practical 
 task library and supporting materials for this subject to the level it's currently at - it's clearly been a 
 sustained effort, and the benefit shows.
 
-I honestly can't think of anything I'd change in terms of Practical task **content** if I were (_per impossibile_) in 
+I honestly can't think of anything I'd change in terms of Practical task **content** if I knew enough to be in 
 charge of the subject. I appreciate the way Pracs are modularised, broken up into tasks of increasing complexity, 
 with optional content flagged as such, but provided for those who can get to it, etc. 
 
@@ -54,21 +54,9 @@ The only thing
 I'd note is 
 that, because there is such a lot of detailed content 
 in each 
-Prac - in the instructions, the examples provided, etc - I think it can be challenging for the subject 
-coordinator to appreciate just how hard it can be for students to assimilate all that content and act on it, in the 
-time available. I think most of us 
-genuinely work incredibly hard, and try our darndest, to do the right thing... but we are finite, human, and will 
-and do miss things, and it's not - always, or even mostly - due to laziness, or not being careful. It's 
-genuinely 
-almost impossible to get through the content for four subjects, simultaneously, in a full-time degree program. I
-simply couldn't get through the core content for CP1404, to a high standard, in under 10-12 hours a week, on average 
-(it would take me 5-6 hours to work through the lectures and seminar content carefully, coding to practise, 
-screenshotting and/or 
-printing code for notes, taking short breaks, etc; and then it would take me about the same time to do the prac 
-activities, including code reviews, well) - 
-and that's without even tackling extension activities. The 
-same holds for my other three subjects... so that's 45-50 hours of week, of core working time, without factoring in 
-time for major assessment pieces (additional workload)... and then there is life... :-)  
+Prac - in the instructions, the examples provided, etc - it can be challenging for students to assimilate that content and act on it, in the 
+time available. I don't recommend cutting out content; I just think it's important to be mindful that students 
+may be thorough, careful and trying their best, and still not "get" things. 
 
 The most valuable part, for me, in addition to the *active* learning, has been documenting what I've learned, in a 
 logical way, 
